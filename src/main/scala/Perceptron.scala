@@ -1,15 +1,18 @@
 object Perceptron extends App {
   val w_1 = (0d, 0d)
-  val x_1 = (-2d, 2d)
-  val y_1 = 1d
   val x = List((-2d, 2d))
+  val y = List(1d)
 
-  val w_t = w_1
-  val x_t = x_1
+  var w_t1 = (0d, 0d)
+  var i = 0
+  for (i <- 0 to 0) {
+    val w_t = w_t1
+    val x_t = x(i)
+    val y_t = y(i)
+    val y_hat_t = sign(dot(w_t, x_t))
 
-  val y_hat_t = sign(dot(w_1, x_1))
-  val y_t = y_1
-  val w_t1 = if (y_hat_t != y_t) add(w_t, mult(y_t, x_t)) else w_t
+    w_t1 = if (y_hat_t != y_t) add(w_t, mult(y_t, x_t)) else w_t
+  }
 
   println(w_t1)
 
