@@ -1,11 +1,10 @@
 object Perceptron extends App {
-  val w_1 = (0d, 0d)
-  val x = List((-2d, 2d))
-  val y = List(1d)
+  val x = List((-2d, 2d), (-2d, -3d), (2d, -1d), (1d, -4d), (2d, 2d), (-3d, -1d))
+  val y = List(1d, -1d, 1d, -1d, 1d, -1d)
 
   var w_t1 = (0d, 0d)
   var i = 0
-  for (i <- 0 to 0) {
+  for (i <- 0 to 5) {
     val w_t = w_t1
     val x_t = x(i)
     val y_t = y(i)
@@ -32,7 +31,4 @@ object Perceptron extends App {
     (v_1._1 + v_2._1, v_1._2 + v_2._2)
   }
 
-  def printArray(xs: List[(Double, Double)]): Unit = {
-    xs.toStream.foreach(print)
-  }
 }
