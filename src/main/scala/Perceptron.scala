@@ -16,11 +16,11 @@ object Perceptron extends App {
   println(w_t1)
 
   def sign(x: Double): Int = {
-    if (x >= 0d) 1 else -1
+    if (x < 0d) -1 else if (x == 0) 0 else 1
   }
 
   def dot(x_1: (Double, Double), x_2: (Double, Double)): Double = {
-    (x_1._1 * x_2._1) + (x_1._2 + x_2._2)
+    (x_1._1 * x_2._1) + (x_1._2 * x_2._2)
   }
 
   def mult(s: Double, x: (Double, Double)): (Double, Double) = {
